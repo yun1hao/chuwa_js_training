@@ -1,0 +1,23 @@
+th,
+td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+#john {
+  color: brown;
+}
+
+.head {
+  color: blue;
+}
+
+.input_box {
+  width: 74ch;
+  height: 5ch;
+  border-radius: 30px;
+}
