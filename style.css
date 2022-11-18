@@ -21,3 +21,14 @@ table {
   height: 5ch;
   border-radius: 30px;
 }
+
+input::placeholder {
+  color: gray;
+  font-size: 1.2em;
+  font-style: italic;
+  padding-left: 10px;
+}
+
+/* .image {
+  padding-left: 50px;
+} */
