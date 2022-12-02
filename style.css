@@ -1,11 +1,12 @@
 th,
 td {
   border: 1px solid black;
-  padding: 5px;
+  padding: 10px;
 }
 
 table {
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 #john {
@@ -26,9 +27,13 @@ input::placeholder {
   color: gray;
   font-size: 1.2em;
   font-style: italic;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 /* .image {
   padding-left: 50px;
 } */
+
+.search_part {
+  margin-top: 10px;
+}
