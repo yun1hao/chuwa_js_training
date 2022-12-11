@@ -5,20 +5,31 @@ const itemsObject = [
   { quantity: 5, price: 400 },
 ];
 //function for generate a new array to double.
-let double_arr = itemsObject.map(({ quantity, price }) => {
-  return { quantity: quantity * 2, price: price * 2 };
-});
+const double_arr = (arr) => {
+  return arr.map(({ quantity, price }) => {
+    return { quantity: quantity * 2, price: price * 2 };
+  });
+};
+//console.log(double_arr(itemsObject));
 
 //function for generate a conditional array
-let only_arr = itemsObject.filter(({ quantity, price }) => {
-  return quantity > 2 && price > 300;
-});
+const only_arr = (e) => {
+  let result = e.filter(({ quantity, price }) => {
+    return quantity > 2 && price > 300;
+  });
+  return result;
+};
+//console.log(only_arr(itemsObject));
 
 //function for calculate the total value of the items
-let value = 0;
-itemsObject.forEach((e) => {
-  value += e.price;
-});
+const total_value = (e) => {
+  let value = 0;
+  e.forEach(({ quantity, price }) => {
+    value += quantity * price;
+  });
+  return value;
+};
+//console.log(total_value(itemsObject));
 
 // Problem2
 const string =
@@ -26,20 +37,14 @@ const string =
 
 //remove all the non-alphabet characters and extra space, also to all lowercase
 function remove(str) {
-  let str1 = "";
-  let str2 = "";
-  let new_arr1 = str.toLowerCase();
-  let new_arr2 = new_arr1.split("-");
-  new_arr2.forEach((e) => {
-    str1 = str1 + e;
-  });
-  let new_arr3 = str1.split("  ");
-  new_arr3.forEach((e) => {
-    str2 = str2 + " " + e;
-  });
-  return str2;
+  return str
+    .toLowerCase()
+    .replace(/[^a-zA-Z]/g, " ")
+    .trim()
+    .split("  ")
+    .join(" ");
 }
-//console.log(remove(string));
+console.log(remove(string));
 
 // Problem3
 const first = [
@@ -76,7 +81,7 @@ function merge(first, second) {
     }
   });
 
-  second.forEach((element, i) => {
+  second.forEach((_, i) => {
     if (i != index_second) {
       result.push({
         uuid: second[i].uuid,
@@ -85,10 +90,9 @@ function merge(first, second) {
       });
     }
   });
+  result.sort((a, b) => {
+    return a.uuid - b.uuid;
+  });
   return result;
 }
-let merge_result = merge(first, second);
-merge_result.sort((a, b) => {
-  return a.uuid - b.uuid;
-});
-console.log(merge_result);
+console.log(merge(first, second));
